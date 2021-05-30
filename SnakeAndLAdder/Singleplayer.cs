@@ -8,51 +8,58 @@ namespace SnakeAndLAdder
     {
         public void player()
         {
-            //single player with position=0
             int position = 0;
-            int newposition = 0;
-            Console.WriteLine("Start the game");
             Console.WriteLine("position :" + position);
-
-            //rolls the die number between 1 to 6
-            Random random = new Random();
-            int dice = random.Next(1, 6);
-            Console.WriteLine("Dice number is:" + dice);
-
-            //Choice foe snake and ladder
-            Console.WriteLine("Enter the choice:");
-            String answer = Convert.ToString(Console.ReadLine());
-            int Choice = random.Next(1, 2);
-            switch (Choice)
+            while (position  >= 0 && position  <= 100)
             {
-                case 1:
-                    //Noplay
-                    position = 0;
-                    Console.WriteLine("current position is : " + position);
-                    break;
+               Random random = new Random();
+                int dice = random.Next(1, 6);
+                Console.WriteLine("Dice number is:" + dice);
+                Console.WriteLine("Enter the choice:");
+                int Choice = random.Next(1, 2);
+                switch (Choice)
+                {
+                    case 1:
+                        position = position  + dice;
+                        if (position >= 100)
+                        {
+                            Console.WriteLine("You won ");
+                            break;
 
-                case 2:
-                    //ladder
-                    position = dice;
-                    Console.WriteLine("current position is : " + position);
-                    break;
+                        }
+                        if (position  == 0)
+                        {
+                            Console.WriteLine("You Lose ");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Its a Ladder:" + position);
+                        }
+                        break;
 
-                case 3:
-                    //snake
-                    position = dice;
-                    Console.WriteLine("current position is : " + position);
-                    break;
-                default:
-                    Console.WriteLine("invalid choice");
-                    break;
+                    case 2:
+                        if (position  < 0)
+                        {
+                            Console.WriteLine("Lose");
+                        }
+                        else
+                        {
+                            position  = position  - dice;
+                        }
+                        Console.WriteLine("Its a Snake" + position);
+                        break;
+
+                    case 3:
+                        position = dice;
+                        Console.WriteLine("current position is : " + position);
+                        break;
+                    default:
+                        Console.WriteLine("invalid choice");
+                        break;
+                }
+                
+                Console.WriteLine("You are on Position " + position);
             }
-            position = position + newposition;
-
-            if (position < 0)
-            {
-                position = 0;
-            }
-            Console.WriteLine("You are on Position " + position);
         }  
     }
 } 
