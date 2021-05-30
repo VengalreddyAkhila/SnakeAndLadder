@@ -6,7 +6,9 @@ namespace SnakeAndLAdder
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Welcome To Snake And Ladder");
+            Singleplayer singleplayer = new Singleplayer();
+            singleplayer.player();
         }
     }
 }
