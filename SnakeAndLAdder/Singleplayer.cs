@@ -11,11 +11,8 @@ namespace SnakeAndLAdder
             //single player position is 0
             int position = 0;
             Console.WriteLine("position :" + position);
-            //checks winning position 100
-            while (position < 100)
-            {
-                //player rolls the die
-                Random random = new Random();
+            //player rolls the die
+            Random random = new Random();
             int dice = random.Next(1, 6);
             Console.WriteLine("Dice number is:" + dice);
             int Choice = random.Next(1, 2);
@@ -43,7 +40,7 @@ namespace SnakeAndLAdder
                         break;
                 }
                 Console.WriteLine("your position is : " + position);
-            }
+            
         }
     }
 }
