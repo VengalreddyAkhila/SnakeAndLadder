@@ -10,6 +10,7 @@ namespace SnakeAndLAdder
         {
             //single player position is 0
             int position = 0;
+            int Rollingdie = 0;
             Console.WriteLine("position :" + position);
             //player checks winning position 100
             while (position < 100)
@@ -46,7 +47,9 @@ namespace SnakeAndLAdder
                         break;
                 }
                 Console.WriteLine("your position is : " + position);
+                 Rollingdie = Rollingdie + 1;
             }
+            Console.WriteLine("rollingdie" + Rollingdie);
             
         }
     }
